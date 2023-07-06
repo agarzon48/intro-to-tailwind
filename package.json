@@ -1,0 +1,22 @@
+{
+  "name": "intro-to-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agarzon48/intro-to-tailwind.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agarzon48/intro-to-tailwind/issues"
+  },
+  "homepage": "https://github.com/agarzon48/intro-to-tailwind#readme",
+  "dependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

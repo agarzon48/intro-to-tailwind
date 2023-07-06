@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .white-link {
+    @apply p-1 px-2 hover:text-yellow-400;
+  }
+  .yellow-link {
+    @apply p-1 px-2 text-yellow-400 hover:text-white;
+  }
+}
