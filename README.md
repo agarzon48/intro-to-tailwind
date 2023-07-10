@@ -27,6 +27,10 @@ npm run tailwind
 npm run serve
 ```
 
+### Notas
+
+1. Para la versión pre-OOP, importar solo index-initial.js
+
 ## Tailwind
 
 El proyecto permite explicar:
@@ -50,5 +54,11 @@ El proyecto permite explicar:
 1. Escuchar eventos drop y actualizar datos/UI
 
 ## OOP
+
+El proyecto permite explicar:
+
+1. Clases en js
+1. this
+1. Métodos y .bind
 
 ## IndexedDB
