@@ -62,3 +62,9 @@ El proyecto permite explicar:
 1. Métodos y .bind
 
 ## IndexedDB
+
+1. Abrir una base de datos
+1. Crear un objeto store
+1. Iniciar transacciones y realizar peticiones a la base de datos
+1. Esperar a que la operación se complete
+1. Trabajar con los resultados

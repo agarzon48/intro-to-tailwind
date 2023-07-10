@@ -2,14 +2,18 @@ import Task from "./Task.js";
 
 class AddTaskButton {
   column = null;
+  db = null;
+  colId = null;
 
-  constructor(column) {
+  constructor(column, db, colId) {
     this.column = column;
     this.column.append(this.render());
+    this.db = db;
+    this.colId = colId;
   }
 
   handleAddTask() {
-    new Task({ column: this.column });
+    new Task({ column: this.column, db: this.db, colId: this.colId });
   }
 
   render() {

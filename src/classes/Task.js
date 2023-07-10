@@ -1,15 +1,28 @@
-import { handleDragStart } from "../utils/dragFunctions";
+import { handleDragStart } from "../utils/dragFunctions.js";
+import { createTask } from "../utils/indexedDB.js";
 
 class Task {
-  id = Math.random().toString();
+  id = null;
   column = null;
-  title = "Task 1";
-  description = "Lorem ipsum";
+  title = null;
+  description = null;
+  db = null;
+  colId = null;
 
-  constructor({ column, title = "New Task", description = "Lorem ipsum" }) {
+  constructor({
+    column,
+    title = null,
+    description = null,
+    db = null,
+    colId,
+    id,
+  }) {
     this.column = column;
     this.title = title;
     this.description = description;
+    this.db = db;
+    this.colId = colId;
+    this.id = id;
     this.render({ title, description });
   }
 
@@ -44,13 +57,30 @@ class Task {
     task.addEventListener("dragstart", this.handleDragStart.bind(this));
     task.id = this.id;
 
-    this.title = prompt("Title", this.title);
+    if (!this.title) {
+      this.title = prompt("Title", "");
+    }
     this.addTitle(task);
 
-    this.description = prompt("Description", this.description);
+    if (!this.description) {
+      this.description = prompt("Description", "");
+    }
     this.addDescription(task);
 
+    if (!this.id) {
+      createTask(this.db, this.colId, this.title, this.description).then(
+        (id) => {
+          this.id = id;
+        }
+      );
+    }
+
     this.column.prepend(task);
+
+    const columnTitle = this.column.querySelector(".column-title");
+    columnTitle.remove();
+    this.column.prepend(columnTitle);
+
     return task;
   }
 }

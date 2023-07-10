@@ -26,4 +26,8 @@ export function handleDragEnd(event) {
   const button = taskList.querySelector("button");
   button.remove();
   taskList.append(button);
+
+  const title = taskList.querySelector("h3");
+  title.remove();
+  taskList.prepend(title);
 }
